@@ -22,7 +22,7 @@ HERBIVORE_DEFAULT_CONFIG = Herbivore_cfg(5, (Apple), 1, 100)
 # -----------------------------------------------
 
 # ------------Статические объекты----------------
-# Существо (количество на карте)
+# Объект (количество на карте)
 APPLE_DEFAULT_CONFIG = Apple_cfg(5)
 TREE_DEFAULT_CONFIG = Tree_cfg(10)
 ROCK_DEFAULT_CONFIG = Rock_cfg(5)
