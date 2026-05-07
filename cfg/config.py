@@ -16,7 +16,6 @@ MAP_DEFAULT_CONFIG = Map_cfg(20, 20, BFS)
 
 # ----------------------------------------------
 
-
 # ------------------МОБЫ-----------------------
 PREDATOR_DEFAULT_CONFIG = Predator_cfg(5, (Herbivore), 1, 100)
 HERBIVORE_DEFAULT_CONFIG = Herbivore_cfg(5, (Apple), 1, 100)

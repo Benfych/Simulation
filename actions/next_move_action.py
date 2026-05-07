@@ -6,8 +6,8 @@ from game_map import Map
 class Next_move(Action):
     def __init__(self, map: Map, simulation):
         self.map = map
-        self.objects = self.map.objects
-        self.pathfinding = self.map.pathfinding
+        self.objects = self.map.get_objects
+        self.pathfinding = self.map._pathfinding
         self.eat_action = Eat_action(self.map)
         self.simulation = simulation
         

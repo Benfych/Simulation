@@ -7,12 +7,12 @@ class Map_update(Action):
     
     def run(self):
         
-        for y in range(self.map.height):
-            for x in range(self.map.width):
-                self.map.grid[y][x] = None
+        for y in range(self.map.get_height):
+            for x in range(self.map.get_width):
+                self.map.get_grid[y][x] = None
 
-        for obj in self.map.objects:
-            self.map.grid[obj.y][obj.x] = obj
+        for obj in self.map.get_objects:
+            self.map.get_grid[obj.y][obj.x] = obj
 
         
         

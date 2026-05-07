@@ -11,7 +11,7 @@ class Creature(Entity):
         self.moves = []
         self.hungry = 100
         
-    def update(self, pathfinding, map: Map, eat_action, move_counter):
+    def update(self, pathfinding, map, eat_action, move_counter):
         if move_counter % 2 == 0:
             self.hungry -= 5
 
@@ -30,9 +30,9 @@ class Creature(Entity):
                 
                 ny, nx = self.moves.pop()
 
-                if (map.grid[ny][nx] == None) or (isinstance(map.grid[ny][nx], self.target)):
+                if (map.get_grid[ny][nx] == None) or (isinstance(map.get_grid[ny][nx], self.target)):
                     self.y, self.x = ny, nx
-                    if isinstance(map.grid[self.y][self.x], self.target):
+                    if isinstance(map.get_grid[self.y][self.x], self.target):
                         eat_action.run(self, self.target)
                 else: 
                     self.moves = []

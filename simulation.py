@@ -122,9 +122,8 @@ class Simulation:
 
             if sleep_time > 0:
                 time.sleep(sleep_time)
-            
-            
-    
+
+
     def interface(self):
         while True:
             print(
