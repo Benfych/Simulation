@@ -61,7 +61,7 @@ class Simulation:
         self.turn_actions = [
             Map_update(self.map),
             Next_move(self.map, self),
-            Render(self.map),
+            Render(self.map, self),
             Population_control(self.map, self.spawner, self)
         ]
 
@@ -78,6 +78,9 @@ class Simulation:
         self.FPS = 1/10 
         self.start = time.time()
         
+    @property
+    def get_move_counter(self) -> int:
+        return self._move_counter
 
     def init_simulation(self):
         self.init_actions[0].run()
@@ -98,7 +101,7 @@ class Simulation:
                 self.turn_actions[0].run()
                 self.turn_actions[2].run()
                 self.turn_actions[3].run()
-                print(self._move_counter)
+
 
             if choice == "2":
                 break
