@@ -3,9 +3,10 @@ from collections import deque
 from Entities.rock import Rock
 from Entities.tree import Tree
 
+
 class BFS:
     # target: Entity
-    def __init__(self, map: Map):
+    def __init__(self, map):
         self.map = map
         self.visited = set()
         self.parents = {}
