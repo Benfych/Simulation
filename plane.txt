@@ -1,0 +1,27 @@
+
+1) Исправить структуру
+
+./Simulation
+├── /src
+│   ├── /actions
+│   ├── /cfg
+│   ├── /Entities
+│   ├── /factories
+│   ├── /patchfinding
+│   ├── /game_map
+│   └── simulation.py
+├── /tests
+├── main.py
+├── .gitignore
+└── README.md
+
+2) Исправить модульный импорт
+
+Тут ты зачем-то "аккумулируешь" импорты из других файлов, очевидно пытаясь создать логику пакетда для импортов его содержимого.
+
+from Entities.apple import Apple
+from Entities.predator import Predator
+from Entities.rock import Rock
+from Entities.tree import Tree
+Это пишется в файле __init__.py
+

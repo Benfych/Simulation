@@ -1,6 +1,8 @@
 from simulation import Simulation
 
-a = Simulation()
-# a.start_simulation()
-a.interface()
-
+if __name__ == "__main__":
+    try:
+        a = Simulation()
+        a.interface()
+    except KeyboardInterrupt:
+        print("Симуляция прекращена")
