@@ -1,11 +1,9 @@
 class GameMap:
-    def __init__(self, height: int, width: int, pathfinder):
-        self._height: int = height
-        self._width: int = width
+    def __init__(self, height, width):
+        self._height = height
+        self._width = width
         self._grid = {i: [None] * self._width for i in range(self._height)}
-        self.reservation_cell = set()
         self._objects = []
-        self.pathfinder = pathfinder(self)
         self._population = {
             "Apple": 0,
             "Predator": 0,
@@ -15,16 +13,18 @@ class GameMap:
         }
 
     @property
-    def width(self) -> int:
+    def width(self):
         return self._width
 
     @property
-    def height(self) -> int:
+    def height(self):
         return self._height
+
+    def population(self, entity):
+        return self._population[entity]
 
     def get_cell(self, y, x):
         return self._grid[y][x]
-
 
     def get_population(self, object_name) -> int:
         return self._population[object_name]
@@ -38,7 +38,7 @@ class GameMap:
         self._objects.remove(obj)
         self._population[obj.__class__.__name__] -= 1
 
-    def set_obj(self, x: int, y: int, obj):
+    def set_obj(self, x, y, obj):
         self._grid[y][x] = obj
 
     #

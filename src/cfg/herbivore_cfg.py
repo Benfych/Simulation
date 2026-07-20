@@ -2,9 +2,9 @@ from dataclasses import dataclass
 
 @dataclass
 class HerbivoreCfg:
-    speed: int = 1
-    hp: int = 100
-    amount: int = 5
-    target: tuple = ("Apple",)
-    name: str = "Herbivore"
+    speed = 1
+    hp = 100
+    amount = 5
+    target = ("Apple",)
+    name = "Herbivore"
 

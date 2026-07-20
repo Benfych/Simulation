@@ -6,6 +6,3 @@ class ObjectCreator(ABC):
     def create_object(self):
         pass
 
-
-
-
