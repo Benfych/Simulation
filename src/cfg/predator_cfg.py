@@ -7,4 +7,3 @@ class PredatorCfg:
     speed: int = 1
     hp: int = 100
     count: int = 5
-    name = "Predator"
