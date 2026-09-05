@@ -1,0 +1,33 @@
+Index: main.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from simulation import Simulation\r\n\r\na = Simulation()\r\n# a.start_simulation()\r\na.interface()\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/main.py b/main.py
+--- a/main.py	(revision 65495d302de0ec4cd459c7625b44e47f4a3fb9c6)
++++ b/main.py	(date 1787762095026)
+@@ -1,6 +1,5 @@
+ from simulation import Simulation
+ 
+ a = Simulation()
+-# a.start_simulation()
+ a.interface()
+ 
+Index: game_map.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from cfg.herbivore_cfg import *\r\n\r\n\r\n\r\n# Класс карты, принимающий конфиг из высоты и толщины\r\n\r\nclass Map:\r\n\r\n    def __init__(self, height: int, width: int, patchfinder):\r\n        self.height: int = height\r\n        self.width: int = width\r\n        self.grid = {i: [None] * self.width for i in range(self.height)}\r\n        self.pathfinding = patchfinder(self)\r\n        self.objects = []\r\n        self.population = {\r\n            \"Apple\": 0,\r\n            \"Predator\": 0,\r\n            \"Herbivore\": 0,\r\n            \"Rock\": 0,\r\n            \"Tree\": 0\r\n        }\r\n        \r\n\r\n    def get_empty_cells(self) -> list:\r\n        return [(y, x) for y in range(self.height) for x in range(self.width) if self.grid[y][x] == None]\r\n    \r\n    def get_population(self, object_name) -> int:\r\n        return self.population[object_name]\r\n\r\n    def add_object(self, obj):\r\n        self.objects.append(obj)\r\n        self.population[obj.__class__.__name__] += 1\r\n\r\n    def remove_object(self, obj):\r\n        self.objects.remove(obj)\r\n        self.population[obj.__class__.__name__] -= 1\r\n        \r\n    def clear_cell(self, x:int, y:int):\r\n        self.grid[y][x] = None\r\n    \r\n    def set_obj(self, x:int, y:int, obj):\r\n        self.grid[y][x] = obj\r\n\r\n\r\n        \r\n    \r\n\r\n\r\n\r\n        \r\n        
+===================================================================
+diff --git a/game_map.py b/game_map.py
+--- a/game_map.py	(revision 65495d302de0ec4cd459c7625b44e47f4a3fb9c6)
++++ b/game_map.py	(date 1787762099148)
+@@ -20,7 +20,6 @@
+             "Tree": 0
+         }
+         
+-
+     def get_empty_cells(self) -> list:
+         return [(y, x) for y in range(self.height) for x in range(self.width) if self.grid[y][x] == None]
+     

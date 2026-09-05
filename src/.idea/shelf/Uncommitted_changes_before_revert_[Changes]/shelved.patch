@@ -1,0 +1,314 @@
+Index: src/entities/creature.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/entities/creature.py b/src/entities/creature.py
+new file mode 100644
+--- /dev/null	(date 1787761505350)
++++ b/src/entities/creature.py	(date 1787761505350)
+@@ -0,0 +1,60 @@
++from entity import Entity
++
++
++class Creature(Entity):
++    def __init__(self, y, x, speed, health, target):
++        super().__init__(y, x)
++        self.speed = speed
++        self.health = health
++        self.hungry = 100
++        self.moves = []
++        self.target = target
++        self.is_alive = True
++
++    def make_move(self, move_counter, game_map):
++        self.hunger_update(move_counter)
++
++        if self.hungry == 100:
++            return
++
++        self.moves = game_map.get_moves(self._y, self._x, self.target)
++
++        if self.speed >= len(self.moves):
++            self.moves = [self.moves[0]]
++        else:
++            self.moves = self.moves[:: self.speed]
++
++        ny, nx = self.moves.pop()
++
++        if isinstance(game_map.get_cell(ny, nx), self.target):
++            self.eat(game_map, ny, nx)
++            self.y, self.x = ny, nx
++
++        elif game_map.get_cell(ny, nx) is None:
++            self.y, self.x = ny, nx
++
++        else:
++            self.moves = []
++
++    def hunger_update(self, move_counter):
++        if move_counter % 2 == 0:
++            self.hungry -= 5
++
++        if self.hungry == 0 or self.hungry < 0:
++            self.is_alive = False
++
++    def eat(self, ny, nx):
++        if (100 - self.hungry) <= 50:
++            self.hungry += 100 - self.hungry
++        else:
++            self.hungry += 50
++
++
++
++
++
++
++
++
++
++
+Index: src/entities/herbivore.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/entities/herbivore.py b/src/entities/herbivore.py
+new file mode 100644
+--- /dev/null	(date 1787761524700)
++++ b/src/entities/herbivore.py	(date 1787761524700)
+@@ -0,0 +1,7 @@
++from entities import Creature
++
++
++class Herbivore(Creature):
++    def __init__(self, y, x, speed, health):
++        self.target =
++        super().__init__(y, x, speed, health, target)
+Index: src/game_map/game_map.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/game_map/game_map.py b/src/game_map/game_map.py
+new file mode 100644
+--- /dev/null	(date 1787761517028)
++++ b/src/game_map/game_map.py	(date 1787761517028)
+@@ -0,0 +1,51 @@
++class GameMap:
++    def __init__(self, height, width):
++        self._height = height
++        self._width = width
++        self._grid = {i: [None] * self._width for i in range(self._height)}
++        self._objects = []
++        self._population = {
++            "Apple": 0,
++            "Predator": 0,
++            "Herbivore": 0,
++            "Rock": 0,
++            "Tree": 0,
++        }
++
++    @property
++    def width(self):
++        return self._width
++
++    @property
++    def height(self):
++        return self._height
++
++    def population(self, entity):
++        return self._population[entity]
++
++    def get_cell(self, y, x):
++        return self._grid[y][x]
++
++    def get_population(self, object_name) -> int:
++        return self._population[object_name]
++
++    def add_object(self, obj):
++        self._objects.append(obj)
++        self._population[obj.__class__.__name__] += 1
++
++    def remove_object(self, obj):
++        self._grid[obj.y][obj.x] = None
++        self._objects.remove(obj)
++        self._population[obj.__class__.__name__] -= 1
++
++    def set_obj(self, x, y, obj):
++        self._grid[y][x] = obj
++
++    #
++    # def get_empty_cells(self) -> list:
++    #     return [
++    #         (y, x)
++    #         for y in range(self._height)
++    #         for x in range(self._width)
++    #         if self._grid[y][x] == None
++    #     ]
+Index: src/factories/fabric.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/factories/fabric.py b/src/factories/fabric.py
+new file mode 100644
+--- /dev/null	(date 1787761515354)
++++ b/src/factories/fabric.py	(date 1787761515354)
+@@ -0,0 +1,8 @@
++from abc import ABC, abstractmethod
++
++class ObjectCreator(ABC):
++
++    @abstractmethod
++    def create_object(self):
++        pass
++
+Index: CLI_render.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CLI_render.py b/CLI_render.py
+new file mode 100644
+--- /dev/null	(date 1787761441578)
++++ b/CLI_render.py	(date 1787761441578)
+@@ -0,0 +1,31 @@
++class Render:
++    SPRITES_EMOJI = {
++        "Herbivore": "🐰",
++        "Apple": "🍎",
++        "Tree": "🌳",
++        "Rock": "🗿",
++        "Predator": "🐺",
++    }
++
++    def __init__(self, game_map):
++        self._game_map = game_map
++
++    def render(self, move_counter):
++        print(f"Номер хода: {move_counter}")
++        print("---------------------------------------------------------------")
++        for y in range(self._height):
++            print(
++                "| "
++                + " ".join(
++                    " ·" if x is None else SPRITES_EMOJI[x.__name__]
++                    for x in self._grid[y]
++                )
++                + " |"
++            )
++
++        herbivore_population = self._game_map.herbivore_population
++
++
++        print(
++            f"🐰: {self._game_map.get_population('Herbivore')}  🐺: {self.get_population('Predator')}  🍎: {self.get_population('Apple')}  ------------------------------------------\n"
++        )
+Index: plane.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/plane.txt b/plane.txt
+new file mode 100644
+--- /dev/null	(date 1787761529460)
++++ b/plane.txt	(date 1787761529460)
+@@ -0,0 +1,24 @@
++Исправить:
++    1. GameMap
++        -
++
++
++
++
++Изменил:
++    1. GameMap
++    - По поводу невелировании пользы от словарь из-за использовани списка в нём.
++    Несогласен, аисптотика в сравнении с вложенным списком изменилась
++    с n^2 до 1 * n, что существенный выигрышь.
++    - Убрал get_ у методов с декоратором @property
++    - Переместил или удалил ненужные методы 
++
++
++    2. Render
++    - Перенёс спрайтовое представление существ в render
++    - Создал отдельны файл для консольного рендера
++
++
++
++
++
+Index: src/cfg/herbivore_cfg.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/cfg/herbivore_cfg.py b/src/cfg/herbivore_cfg.py
+new file mode 100644
+--- /dev/null	(date 1787761526165)
++++ b/src/cfg/herbivore_cfg.py	(date 1787761526165)
+@@ -0,0 +1,10 @@
++from dataclasses import dataclass
++
++@dataclass
++class HerbivoreCfg:
++    speed = 1
++    hp = 100
++    amount = 5
++    target = ("Apple",)
++    name = "Herbivore"
++
+Index: src/cfg/map_cfg.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/cfg/map_cfg.py b/src/cfg/map_cfg.py
+new file mode 100644
+--- /dev/null	(date 1787761527621)
++++ b/src/cfg/map_cfg.py	(date 1787761527621)
+@@ -0,0 +1,8 @@
++from dataclasses import dataclass
++
++
++@dataclass
++class MapCfg:
++    pathfinder = None
++    height = 20
++    width = 20
+Index: src/cfg/apple_cfg.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/cfg/apple_cfg.py b/src/cfg/apple_cfg.py
+new file mode 100644
+--- /dev/null	(date 1787761438810)
++++ b/src/cfg/apple_cfg.py	(date 1787761438810)
+@@ -0,0 +1,8 @@
++from dataclasses import dataclass
++from entities import Apple
++
++
++@dataclass
++class AppleCfg:
++    amount = 5
++    name = "Apple"
+Index: src/entities/entity.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/entities/entity.py b/src/entities/entity.py
+new file mode 100644
+--- /dev/null	(date 1787761507880)
++++ b/src/entities/entity.py	(date 1787761507880)
+@@ -0,0 +1,7 @@
++class Entity():
++    def __init__(self, y: int, x: int):
++        self._y = y
++        self._x = x
++
++
++

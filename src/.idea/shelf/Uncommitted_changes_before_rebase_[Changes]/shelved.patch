@@ -1,0 +1,285 @@
+Index: src/game_map/game_map.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/game_map/game_map.py b/src/game_map/game_map.py
+new file mode 100644
+--- /dev/null	(date 1787761666565)
++++ b/src/game_map/game_map.py	(date 1787761666565)
+@@ -0,0 +1,51 @@
++class GameMap:
++    def __init__(self, height: int, width: int, pathfinder):
++        self._height: int = height
++        self._width: int = width
++        self._grid = {i: [None] * self._width for i in range(self._height)}
++        self.reservation_cell = set()
++        self._objects = []
++        self.pathfinder = pathfinder(self)
++        self._population = {
++            "Apple": 0,
++            "Predator": 0,
++            "Herbivore": 0,
++            "Rock": 0,
++            "Tree": 0,
++        }
++
++    @property
++    def width(self) -> int:
++        return self._width
++
++    @property
++    def height(self) -> int:
++        return self._height
++
++    def get_cell(self, y, x):
++        return self._grid[y][x]
++
++
++    def get_population(self, object_name) -> int:
++        return self._population[object_name]
++
++    def add_object(self, obj):
++        self._objects.append(obj)
++        self._population[obj.__class__.__name__] += 1
++
++    def remove_object(self, obj):
++        self._grid[obj.y][obj.x] = None
++        self._objects.remove(obj)
++        self._population[obj.__class__.__name__] -= 1
++
++    def set_obj(self, x: int, y: int, obj):
++        self._grid[y][x] = obj
++
++    #
++    # def get_empty_cells(self) -> list:
++    #     return [
++    #         (y, x)
++    #         for y in range(self._height)
++    #         for x in range(self._width)
++    #         if self._grid[y][x] == None
++    #     ]
+Index: src/factories/fabric.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/factories/fabric.py b/src/factories/fabric.py
+new file mode 100644
+--- /dev/null	(date 1787761666576)
++++ b/src/factories/fabric.py	(date 1787761666576)
+@@ -0,0 +1,3 @@
++
++
++
+Index: CLI_render.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CLI_render.py b/CLI_render.py
+new file mode 100644
+--- /dev/null	(date 1787761666587)
++++ b/CLI_render.py	(date 1787761666587)
+@@ -0,0 +1,25 @@
++
++
++def render(self, move_counter):
++    SPRITES_EMOJI = {
++        "Herbivore": "🐰",
++        "Apple": "🍎",
++        "Tree": "🌳",
++        "Rock": "🗿",
++        "Predator": "🐺",
++    }
++
++    print(f"Номер хода: {move_counter}")
++    print("---------------------------------------------------------------")
++    for y in range(self._height):
++        print(
++            "| "
++            + " ".join(
++                " ·" if x is None else SPRITES_EMOJI[x.__name__]
++                for x in self._grid[y]
++            )
++            + " |"
++        )
++    print(
++        f"🐰: {self.get_population('Herbivore')}  🐺: {self.get_population('Predator')}  🍎: {self.get_population('Apple')}  ------------------------------------------\n"
++    )
+Index: plane.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/plane.txt b/plane.txt
+new file mode 100644
+--- /dev/null	(date 1787761666601)
++++ b/plane.txt	(date 1787761666601)
+@@ -0,0 +1,23 @@
++Исправить:
++    1. GameMap
++        -
++
++
++
++Изменил:
++    1. GameMap
++    - По поводу невелировании пользы от словарь из-за использовани списка в нём.
++    Несогласен, аисптотика в сравнении с вложенным списком изменилась
++    с n^2 до 1 * n, что существенный выигрышь
++    - Убрал get_ у методов с декоратором @property
++    - Переместил или удалил ненужные методы 
++
++
++    2. Render
++    - Перенёс спрайтовое представление существ в render
++    - Создал отдельны файл для консольного рендера
++
++
++
++
++
+Index: src/cfg/herbivore_cfg.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/cfg/herbivore_cfg.py b/src/cfg/herbivore_cfg.py
+new file mode 100644
+--- /dev/null	(date 1787761666616)
++++ b/src/cfg/herbivore_cfg.py	(date 1787761666616)
+@@ -0,0 +1,10 @@
++from dataclasses import dataclass
++
++@dataclass
++class HerbivoreCfg:
++    speed: int = 1
++    hp: int = 100
++    amount: int = 5
++    target: tuple = ("Apple",)
++    name: str = "Herbivore"
++
+Index: src/cfg/map_cfg.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/cfg/map_cfg.py b/src/cfg/map_cfg.py
+new file mode 100644
+--- /dev/null	(date 1787761666633)
++++ b/src/cfg/map_cfg.py	(date 1787761666633)
+@@ -0,0 +1,8 @@
++from dataclasses import dataclass
++
++
++@dataclass
++class MapCfg:
++    pathfinder: type[pathfinder]
++    height: int = 20
++    width: int = 20
+Index: src/cfg/apple_cfg.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/cfg/apple_cfg.py b/src/cfg/apple_cfg.py
+new file mode 100644
+--- /dev/null	(date 1787761666650)
++++ b/src/cfg/apple_cfg.py	(date 1787761666650)
+@@ -0,0 +1,8 @@
++from dataclasses import dataclass
++from entities import Apple
++
++
++@dataclass
++class AppleCfg:
++    amount: int = 5
++    name: str = "Apple"
+Index: src/entities/creature.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/entities/creature.py b/src/entities/creature.py
+new file mode 100644
+--- /dev/null	(date 1787761666548)
++++ b/src/entities/creature.py	(date 1787761666548)
+@@ -0,0 +1,56 @@
++from entity import Entity
++
++
++class Creature(Entity):
++    def __init__(self, y, x, speed, health, target, game_map):
++        super().__init__(y, x)
++        self.speed = speed
++        self.health = health
++        self.hungry = 100
++        self.moves = []
++        self.target = target
++        self.is_alive = True
++        self.game_map = game_map
++
++
++    def hunger_update(self, move_counter):
++        if move_counter % 2 == 0:
++            self.hungry -= 5
++
++        if self.hungry == 0 or self.hungry < 0:
++            # GameMap.remove_object(self)
++
++    def next_move(self, game_map, move_counter):
++        self.hunger_update(move_counter)
++
++        if self.hungry == 100:
++            return
++
++        self.moves = game_map.get_moves(self.y, self.x, self.target)
++
++        if self.speed >= len(self.moves):
++            self.moves = [self.moves[0]]
++        else:
++            self.moves = self.moves[:: self.speed]
++
++        ny, nx = self.moves.pop()
++
++        if isinstance(game_map.get_cell(ny, nx), self.target):
++            self.eat(game_map, ny, nx)
++            self.y, self.x = ny, nx
++
++        elif game_map.get_cell(ny, nx) is None:
++            self.y, self.x = ny, nx
++
++        else:
++            self.moves = []
++
++    def eat(self, game_map, ny, nx):
++        if (100 - self.hungry) <= 50:
++            self.hungry += 100 - self.hungry
++        else:
++            self.hungry += 50
++
++        target_rm = game_map.get_cell(ny, nx)
++        if target_rm:
++            game_map.remove_object(target_rm)
+Index: src/entities/herbivore.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/entities/herbivore.py b/src/entities/herbivore.py
+new file mode 100644
+--- /dev/null	(date 1787761666555)
++++ b/src/entities/herbivore.py	(date 1787761666555)
+@@ -0,0 +1,7 @@
++from entities import Creature
++
++
++class Herbivore(Creature):
++    def __init__(self, y, x, speed, health):
++        self.target =
++        super().__init__(y, x, speed, health, target)
+diff --git a/src/entities/predator.py b/src/entities/predator.py
+new file mode 100644
+diff --git a/src/entities/entity.py b/src/entities/entity.py
+new file mode 100644
