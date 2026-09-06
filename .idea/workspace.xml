@@ -4,7 +4,33 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6defda77-6940-4a68-9cf9-3afa5f2cb81d" name="Changes" comment="Revert &quot;фиксы&quot;&#10;&#10;This reverts commit e7f1fc79" />
+    <list default="true" id="6defda77-6940-4a68-9cf9-3afa5f2cb81d" name="Changes" comment="Revert &quot;фиксы&quot;&#10;&#10;This reverts commit e7f1fc79">
+      <change afterPath="$PROJECT_DIR$/src/conf/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/conf/entities_conf.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entities/empty_cell.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entities/entity_factory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cfg/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/TEST.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cfg/apple_cfg.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cfg/cfg.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cfg/config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cfg/herbivore_cfg.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cfg/map_cfg.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cfg/predator_cfg.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cfg/rock_cfg.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cfg/tree_cfg.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conf/creatures.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conf/map.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/conf/map_conf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/apple.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/apple.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/creature.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/creature.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/entity.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/entity.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/herbivore.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/herbivore.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/predator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/predator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/patchfinding/BFS.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/patchfinding/pathfinder_BFS.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/simulation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/изменил" beforeDir="false" afterPath="$PROJECT_DIR$/изменил" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,40 +55,48 @@
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {}
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Benfych/Simulation.git&quot;,
-    &quot;accountId&quot;: &quot;4ce13510-81eb-4c8a-ab52-0518d9040841&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Benfych/Simulation.git",
+    "accountId": "2d514f1f-272b-4954-bf34-1d0aa589ff1c"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8,
   &quot;fromUser&quot;: false
 }</component>
   <component name="ProjectId" id="3ISDfbrr0Xkp5Nkm6b52kOFu3jy" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;SearchEverywhere.PersistedScope.FileSearchEverywhereContributor&quot;: &quot;All Places&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;refactoring&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/User80085/PycharmProjects/Simulation/src/cfg&quot;,
-    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;settings.editor.splitter.proportion&quot;: &quot;0.3442438&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.TEST.executor": "Run",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SearchEverywhere.PersistedScope.FileSearchEverywhereContributor": "All Places",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "#1 on refactoring",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "/home/deck/PycharmProjects/Simulation",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.jshint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.jshint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.splitter.proportion": "0.3442438"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\User80085\PycharmProjects\Simulation\src\cfg" />
@@ -75,7 +109,32 @@
       <recent name="C:\Users\User80085\PycharmProjects\Simulation\src" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.TEST">
+    <configuration name="TEST" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Simulation" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TEST.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Simulation" />
       <option name="ENV_FILES" value="" />
@@ -85,7 +144,6 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="C:\Program Files\PyManager\python3.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -102,11 +160,15 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.TEST" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-PY-262.9437.214" />
         <option value="bundled-python-sdk-821f704e66d9-5bd6d13a2a75-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-262.9437.214" />
       </set>
     </attachedChunks>
@@ -131,6 +193,7 @@
       <workItem from="1788006117564" duration="87000" />
       <workItem from="1788006219406" duration="2845000" />
       <workItem from="1788376543802" duration="1249000" />
+      <workItem from="1788700642595" duration="22249000" />
     </task>
     <servers />
   </component>
@@ -153,6 +216,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="Revert &quot;фиксы&quot;&#10;&#10;This reverts commit e7f1fc79" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Simulation$main.coverage" NAME="main Coverage Results" MODIFIED="1787762082801" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Simulation$TEST.coverage" NAME="TEST Coverage Results" MODIFIED="1788722993026" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Simulation$main.coverage" NAME="main Coverage Results" MODIFIED="1788721328629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -1,17 +1,21 @@
-from Entities.entity import Entity
-from patchfinding.BFS import BFS
-
+from .entity import Entity
+from random import randint
 
 class Creature(Entity):
 
-    def __init__(self, y, x, speed, health):
+    def __init__(self, y, x, speed, health, target, patchfinding):
         super().__init__(y, x)
         self.speed = speed
         self.health = health
         self.moves = []
         self.hungry = 100
-        
-    def make_move(self, pathfinding, map: Map, eat_action, move_counter):
+        self.target = target
+        self.pathfinder = patchfinding
+
+    def random_cordinate(self):
+        pass
+
+    def make_move(self, pathfinding, move_counter):
         if move_counter % 2 == 0:
             self.hungry -= 5
 
@@ -37,7 +41,8 @@ class Creature(Entity):
                 else: 
                     self.moves = []
 
-    def run(self, obj, target):
+
+    def eat(self, obj, target):
         if (100 - obj.hungry) <= 50:
             obj.hungry += (100 - obj.hungry)
         else:

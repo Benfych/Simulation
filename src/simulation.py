@@ -2,7 +2,7 @@
 # ----------------------------------------
 
 from game_map import Map
-from patchfinding.BFS import BFS
+from patchfinding.pathfinder_BFS import BFS
 import time
 import os
 
@@ -150,9 +150,17 @@ class Simulation:
         def __init__(self, map: Map):
             self.map = map
 
+        creature_sprites = {
+            "tree":"🌳",
+            "rock":"🗿",
+            "predator":"🐺",
+            "herbivore":"🐰",
+            "apple":"🍎",
+        }
+
         def run(self):
             print("---------------------------------------------------------------")
             for y in range(self.map.height - 1):
-                print("| " + " ".join(" ·" if x is None else str(x) for x in self.map.grid[y]) + " |")
+                print("| " + " ".join(" ·" if x is None else creature_sprites[x.__class__.__name__] for x in self.map.grid[y]) + " |")
             print(
-                f"🐰: {self.map.population["Herbivore"]}  🐺: {self.map.population["Predator"]}  🍎: {self.map.population["Apple"]}  ------------------------------------------\n")
+                f"{creature_sprites["herbivore"]}: {self.map.population["Herbivore"]}  {creature_sprites["predator"]: {self.map.population["Predator"]}  {creature_sprites["apple"]: {self.map.population["Apple"]}  ------------------------------------------\n")
