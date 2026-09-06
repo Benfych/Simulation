@@ -1,12 +1,11 @@
- from random import randint
 from collections import deque
-from Entities.rock import Rock
-from Entities.tree import Tree
+from entities  import Rock
+from entities import Tree
 
-class BFS:
+class PathFinderBFS:
     # target: Entity
-    def __init__(self, map: Map):
-        self.map = map
+    def __init__(self, game_map):
+        self.map = game_map
         self.visited = set()
         self.parents = {}
         self.queue = deque()
