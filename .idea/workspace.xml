@@ -5,31 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6defda77-6940-4a68-9cf9-3afa5f2cb81d" name="Changes" comment="Revert &quot;фиксы&quot;&#10;&#10;This reverts commit e7f1fc79">
-      <change afterPath="$PROJECT_DIR$/src/conf/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/conf/entities_conf.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entities/empty_cell.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entities/entity_factory.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cfg/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/TEST.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cfg/apple_cfg.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cfg/cfg.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cfg/config.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cfg/herbivore_cfg.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cfg/map_cfg.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cfg/predator_cfg.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cfg/rock_cfg.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cfg/tree_cfg.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conf/creatures.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conf/map.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/conf/map_conf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/apple.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/apple.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/creature.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/creature.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/entity.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/entity.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/herbivore.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/herbivore.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/predator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/predator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/patchfinding/BFS.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/patchfinding/pathfinder_BFS.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simulation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/изменил" beforeDir="false" afterPath="$PROJECT_DIR$/изменил" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,12 +31,12 @@
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {}
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Benfych/Simulation.git",
-    "accountId": "2d514f1f-272b-4954-bf34-1d0aa589ff1c"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Benfych/Simulation.git&quot;,
+    &quot;accountId&quot;: &quot;2d514f1f-272b-4954-bf34-1d0aa589ff1c&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8,
   &quot;fromUser&quot;: false
@@ -83,7 +59,6 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "SearchEverywhere.PersistedScope.FileSearchEverywhereContributor": "All Places",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "#1 on refactoring",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "/home/deck/PycharmProjects/Simulation",
     "node.js.detected.package.eslint": "true",
@@ -93,7 +68,7 @@
     "node.js.selected.package.jshint": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
     "settings.editor.splitter.proportion": "0.3442438"
   }
 }]]></component>
@@ -104,6 +79,7 @@
       <recent name="C:\Users\User80085\PycharmProjects\Simulation\src\factories" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/factories" />
       <recent name="C:\Users\User80085\PycharmProjects\Simulation\src\actions\tick" />
       <recent name="C:\Users\User80085\PycharmProjects\Simulation\src\actions\init" />
       <recent name="C:\Users\User80085\PycharmProjects\Simulation\src" />
@@ -193,7 +169,8 @@
       <workItem from="1788006117564" duration="87000" />
       <workItem from="1788006219406" duration="2845000" />
       <workItem from="1788376543802" duration="1249000" />
-      <workItem from="1788700642595" duration="22249000" />
+      <workItem from="1788700642595" duration="22743000" />
+      <workItem from="1788807048114" duration="3989000" />
     </task>
     <servers />
   </component>

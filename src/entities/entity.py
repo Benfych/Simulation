@@ -2,6 +2,6 @@
 class Entity:
     """Изначальный класс, от которого наследуются все объекты"""
 
-    def __init__(self, y: int, x: int):
-        self.y = y
+    def __init__(self, x, y):
         self.x = x
+        self.y = y

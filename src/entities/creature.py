@@ -3,16 +3,16 @@ from random import randint
 
 class Creature(Entity):
 
-    def __init__(self, y, x, speed, health, target, patchfinding):
-        super().__init__(y, x)
+    def __init__(self, x, y, speed, health, target, patchfinder):
+        super().__init__(x, y)
         self.speed = speed
         self.health = health
         self.moves = []
         self.hungry = 100
         self.target = target
-        self.pathfinder = patchfinding
+        self.pathfinder = patchfinder
 
-    def random_cordinate(self):
+    def random_coordinate(self):
         pass
 
     def make_move(self, pathfinding, move_counter):
