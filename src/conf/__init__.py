@@ -1,4 +1,4 @@
-from .entities_conf import  WOLF_CONF, TREE_CONF, APPLE_CONF, ROCK_CONF, HERBIVORE_CONF
+from .entities_conf import  PREDATOR_CONF, HERBIVORE_CONF, OBJECT_COUNT_CONF
 from .map_conf import MAP_CONF
 
 

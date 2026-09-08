@@ -1,7 +1,8 @@
 from Entities.creature import Creature
 from .herbivore import Herbivore
+from conf import PREDATOR_CONF
+
 
 class Predator(Creature):
-    def __init__(self, x, y, speed, hp, patchfinder) :
-        target = Herbivore
-        super().__init__(x, y, speed, hp, target, patchfinder)
+    def __init__(self, cord, config):
+        super().__init__(x, y, HP, SPEED)

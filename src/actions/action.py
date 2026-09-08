@@ -1,8 +1,8 @@
-from abc import ABC, abstractmethod
+from ABS import ABS
 
 
-# Абстрактный класс для actions
 class Action(ABC):
+    """абстрактный класс для action"""
     @abstractmethod
-    def run():
+    def execute(self, game_map):
         pass

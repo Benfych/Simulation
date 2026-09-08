@@ -14,20 +14,20 @@ class EntityFactory:
     super().__init__(x, y, speed, hp, target, patchfinding)
 
     @classmethod
-    def create_entity(entity_type, x, y):
+    def create_entity(entity_type, x, y, config):
 
         match entity_type:
             case "Apple":
-                return Apple(x, y, APPLE_CONF["COUNT"])
+                return Apple(x, y, config)
             case "Herbivore":
-                return Herbivore(x, y, HERBIVORE_CONF["SPEED"], HERBIVORE_CONF["HP"], HERBIVORE_CONF["PATHFINDING"])
+                return Herbivore(x, y, config)
             case "Predator":
-                return Predator(x, y)
+                return Predator(x, y, config)
             case "Rock":
-                return Rock(x, y)
+                return Rock(x, y, config)
             case "Tree":
-                return Tree(x, y)
+                return Tree(x, y, config)
             case "EmptyCell":
-                return EmptyCell(x, y)
+                return EmptyCell(x, y, config)
             case _:
                 raise ValueError(f"Неизвестный тип: {entity_type}")

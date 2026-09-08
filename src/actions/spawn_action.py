@@ -1,14 +1,10 @@
-from random import shuffle
-from game_map import Map
+from .action import Action
 
+def SpawnAction(Action):
+    """спавнер объектов на карте"""
+    def __init__(self, obj_count):
+        self.obj = obj_count
 
-class Spawner:
-    def __init__(self, map):
-        self.map = map
+    def execute(self, game_map):
+        pass
 
-    def run(self, obj):
-        empty_cells = self.map.get_empty_cells()
-        shuffle(empty_cells)
-        y, x = empty_cells.pop()
-        cur_obj = obj.create_obj(y, x)
-        self.map.add_object(cur_obj)

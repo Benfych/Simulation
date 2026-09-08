@@ -3,10 +3,10 @@ from random import randint
 
 class Creature(Entity):
 
-    def __init__(self, x, y, speed, health, target, patchfinder):
+    def __init__(self, x, y, HP, SPEED):
         super().__init__(x, y)
-        self.speed = speed
-        self.health = health
+        self.SPEED = SPEED
+        self.HP = HP
         self.moves = []
         self.hungry = 100
         self.target = target
