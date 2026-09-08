@@ -3,20 +3,16 @@ from entities  import Rock
 from entities import Tree
 
 class PathFinderBFS:
-    # target: Entity
     def __init__(self, game_map):
         self.map = game_map
-        self.visited = set()
-        self.parents = {}
-        self.queue = deque()
         self.directions = [(1, 0),(0, 1),(-1, 0),(0, -1)]
         self.rows = len(self.map.grid[0])
         self.col = len(self.map.grid)
         
-    def get_moves(self, start_y: int, start_x: int, target) -> list:
-        self.queue = deque([(start_y, start_x)])
-        self.visited = {(start_y, start_x)}
-        self.parents = {}
+    def get_moves(self, start_y, start_x, target):
+        queue = deque([(start_y, start_x)])
+        visited = {(start_y, start_x)}
+        parents = {}
 
         while self.queue:
             y, x = self.queue.popleft()
