@@ -1,8 +1,9 @@
 from Entities.creature import Creature
-from .herbivore import Herbivore
-from conf import PREDATOR_CONF
-
 
 class Predator(Creature):
-    def __init__(self, cord, config):
-        super().__init__(x, y, HP, SPEED)
+    def __init__(self, cord, conf):
+        HP = conf[HP]
+        SPEED = conf[SPEED]
+        ATTACK = conf[ATTACK]
+        super().__init__(cord, HP, SPEED)
+

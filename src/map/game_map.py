@@ -1,13 +1,11 @@
-from cfg.herbivore_cfg import *
-
 
 # Класс карты, принимающий конфиг из высоты и толщины
 
-class Map:
+class GameMap:
 
     def __init__(self, config):
-        self.height = height
-        self.width = width
+        self.height = config["height"]
+        self.width = config["weight"]
         self.grid = {i: [None] * self.width for i in range(self.height)}
         self.objects = []
         self.objects_count = {}
@@ -15,10 +13,9 @@ class Map:
     def get_empty_cells(self) -> list:
         return [(y, x) for y in range(self.height) for x in range(self.width) if self.grid[y][x] == None]
 
-    #Потенциальный костыль (Доделать)
+    # Потенциальный костыль (Доделать)
     # def is_cell_empty(self, x, y):
     #     return self.
-
 
     def get_population(self, object_name) -> int:
         return self.population[object_name]
