@@ -1,16 +1,9 @@
-from actions.action import Action
-from actions.eat_action import Eat_action
-from actions.map_update_action import Map_update
-from game_map import Map
+from
 
 class Next_move(Action):
-    def __init__(self, map: Map, simulation):
-        self.map = map
-        self.objects = self.map.objects
-        self.pathfinding = self.map.pathfinding
-        self.eat_action = Eat_action(self.map)
-        self.simulation = simulation
-        
+    def __init__(self, game_map):
+        self._game_map = game_map
+
     def run(self):
         self.simulation._move_counter += 1
         is_creature = lambda obj: is_instance(obj, Creature)

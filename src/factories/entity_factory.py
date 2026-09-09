@@ -11,23 +11,20 @@ from conf import RABBIT_CONF, WOLF_CONF, TREE_CONF, APPLE_CONF, ROCK_CONF, MAP_C
 
 class EntityFactory:
     """Простая фабрика для создания экземпляров объектов"""
-    super().__init__(x, y, speed, hp, target, patchfinding)
-
     @classmethod
-    def create_entity(entity_type, x, y, config):
-
+    def create_entity(entity_type, cord, config):
         match entity_type:
             case "Apple":
-                return Apple(x, y, config)
+                return Apple(cord, config)
             case "Herbivore":
-                return Herbivore(x, y, config)
+                return Herbivore(cord, config)
             case "Predator":
-                return Predator(x, y, config)
+                return Predator(cord, config)
             case "Rock":
-                return Rock(x, y, config)
+                return Rock(cord, config)
             case "Tree":
-                return Tree(x, y, config)
+                return Tree(cord, config)
             case "EmptyCell":
-                return EmptyCell(x, y, config)
+                return EmptyCell(cord, config)
             case _:
                 raise ValueError(f"Неизвестный тип: {entity_type}")

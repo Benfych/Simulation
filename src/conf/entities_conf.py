@@ -7,7 +7,6 @@ CREATURE_CONF:
     Оптионально только для хищников
     "ATTACK": 0 < INT <= 100 - Сила атаки существа
 
-
 Количество объектов на карте:
 
 OBJECT_POPULATION_CONF
@@ -15,20 +14,23 @@ OBJECT_POPULATION_CONF
 
 """
 
-
-#Конфигурация существ
+# Конфигурация существ
 HERBIVORE_CONF = {
-    "HP": 100,
+    "hp": 100,
     "speed": 1,
 }
 
 PREDATOR_CONF = {
-    "HP": 100,
+    "hp": 100,
     "speed": 1,
     "attack": 50,
 }
 
-#Конфигурация количества существ на карте
+CREATURE_PATHFINDER_CONF = {
+    "pathfonder": "PathFinderBFS"
+}
+
+# Конфигурация количества существ на карте
 OBJECT_POPULATION_CONF = {
     "HERBIVORE": 5,
     "PREDATOR": 5,
