@@ -11,8 +11,8 @@ class Entity:
     """
 
     def __init__(self, cord):
-        self.x = cord[0]
-        self.y = cord[1]
+        self.x = cord["x"]
+        self.y = cord["y"]
         self._to_remove = False
 
     def remove_entity(self):

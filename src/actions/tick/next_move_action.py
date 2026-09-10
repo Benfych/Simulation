@@ -1,4 +1,3 @@
-from
 
 class Next_move(Action):
     def __init__(self, game_map):

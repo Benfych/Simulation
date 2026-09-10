@@ -1,11 +1,14 @@
+from entities import herbivore, apple
+
 """
 Файл конфигурации объектов и их количество на карте.
 
 CREATURE_CONF:
-    "HP": 0 < INT <= 100 - Здоровье существа
-    "SPEED": 0 < INT <= 3 - Скорость существа
+    "hp": 0 < INT <= 100 - Здоровье существа
+    "speed": 0 < INT <= 3 - Скорость существа
     Оптионально только для хищников
-    "ATTACK": 0 < INT <= 100 - Сила атаки существа
+    "attack": 0 < INT <= 100 - Сила атаки существа
+    "target
 
 Количество объектов на карте:
 
@@ -14,20 +17,23 @@ OBJECT_POPULATION_CONF
 
 """
 
+
 # Конфигурация существ
 HERBIVORE_CONF = {
     "hp": 100,
     "speed": 1,
+    "target": [apple]
 }
 
 PREDATOR_CONF = {
     "hp": 100,
     "speed": 1,
     "attack": 50,
+    "target": [herbivore]
 }
 
 CREATURE_PATHFINDER_CONF = {
-    "pathfonder": "PathFinderBFS"
+    "pathfinder": "PathFinderBFS"
 }
 
 # Конфигурация количества существ на карте
