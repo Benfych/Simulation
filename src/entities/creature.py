@@ -29,7 +29,7 @@ class Creature(Entity):
             self.moves = pathfinding.get_moves(self.x, self.y, self._target)
 
             if self.moves:
-                if self.obj
+                if self.
 
                 if self._speed >= len(self.moves):
                     self.moves = [self.moves[0]]

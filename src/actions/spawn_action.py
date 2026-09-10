@@ -1,10 +1,10 @@
-from .action import Action
+from random import randint
+
 
 def SpawnAction(Action):
     """спавнер объектов на карте"""
-    def __init__(self, obj_count):
-        self.obj = obj_count
 
-    def execute(self, game_map):
-        pass
+    def execute(self, game_map, obj):
+        nx, xy = randint(0, self.width - 1), randint(0, self.height - 1)
+        game_map.
 
