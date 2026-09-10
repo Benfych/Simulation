@@ -1,3 +1,5 @@
+
+
 class CLI_render:
     CREATURES_SPRITES = {
         "Herbivore": "🐰",
