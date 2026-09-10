@@ -7,9 +7,7 @@
     <list default="true" id="6defda77-6940-4a68-9cf9-3afa5f2cb81d" name="Changes" comment="Revert &quot;фиксы&quot;&#10;&#10;This reverts commit e7f1fc79">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/spawn_action.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/spawn_action.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/tick/next_move_action.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/tick/next_move_action.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conf/entities_conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/conf/entities_conf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/creature.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/creature.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/factories/entity_factory.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/factories/entity_factory.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/map/game_map.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/map/game_map.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

@@ -27,8 +27,8 @@ class GameMap:
         self._objects.remove(obj)
         self._objects_count[obj.__class__.__name__] -= 1
 
-    def set_obj(self, cord):
-        self.grid[cord["x"]][cord["y"]] = obj
+    def set_obj(self, x, y):
+        self.grid[x][y] = obj
 
     def get_height(self):
         return self._height
@@ -37,3 +37,7 @@ class GameMap:
         return self._width
 
     def is_free(self, x, y):
+        if self._grid[x][y] is None:
+            return True
+
+

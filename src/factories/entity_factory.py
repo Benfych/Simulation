@@ -6,25 +6,25 @@ from .tree import Tree
 from .empty_cell import EmptyCell
 
 # Импорт конифгов
-from conf import RABBIT_CONF, WOLF_CONF, TREE_CONF, APPLE_CONF, ROCK_CONF, MAP_CONF, HERBIVORE_CONF
+from conf import HERBIVORE_CONF, PREDATOR_CONF, TREE_CONF, APPLE_CONF, ROCK_CONF, MAP_CONF
 
 
 class EntityFactory:
     """Простая фабрика для создания экземпляров объектов"""
     @classmethod
-    def create_entity(entity_type, cord, config):
+    def create_entity(entity_type, x, y):
         match entity_type:
             case "Apple":
-                return Apple(cord, config)
+                return Apple(x, y, config)
             case "Herbivore":
-                return Herbivore(cord, config)
+                return Herbivore(x, y, HERBIVORE_CONF)
             case "Predator":
-                return Predator(cord, config)
+                return Predator(x, y, PREDATOR_CONF)
             case "Rock":
-                return Rock(cord, config)
+                return Rock(x, y, config)
             case "Tree":
-                return Tree(cord, config)
+                return Tree(x, y, config)
             case "EmptyCell":
-                return EmptyCell(cord, config)
+                return EmptyCell(x, y, config)
             case _:
                 raise ValueError(f"Неизвестный тип: {entity_type}")
