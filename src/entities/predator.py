@@ -2,8 +2,11 @@ from Entities.creature import Creature
 
 class Predator(Creature):
     def __init__(self, cord, conf):
-        HP = conf[HP]
-        SPEED = conf[SPEED]
-        ATTACK = conf[ATTACK]
-        super().__init__(cord, HP, SPEED)
+        hp = conf["hp"]
+        speed= conf["speed"]
+        attack = conf["attack"]
+        super().__init__(cord, hp, speed)
 
+
+    def attack(self, obj):
+        obj.take_damage(self.attack)

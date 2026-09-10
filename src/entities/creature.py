@@ -10,56 +10,60 @@ class Creature(Entity):
 
     """
 
-    def __init__(self, cord, hp, speed, pathfinder):
+    def __init__(self, cord, hp, speed, target, pathfinder):
         super().__init__(cord)
         self._moves = []
         self._speed = speed
         self._hp = hp
         self._hungry = 100
         self._target = target
-        self._pathfinder = patchfinder
+        self._pathfinder = pathfinder
         self._move_counter = 0
 
-    def make_move(self, pathfinding, move_counter):
+    def make_move(self, pathfinding):
+        self.update_state()
         self._move_counter += 1
 
-        if self.hungry < 100:
+        if self._hungry < 100:
 
-            self.moves = pathfinding.get_moves(self.x, self.y, self.target)
+            self.moves = pathfinding.get_moves(self.x, self.y, self._target)
 
             if self.moves:
-                if self.speed >= len(self.moves):
+                if self.obj
+
+                if self._speed >= len(self.moves):
                     self.moves = [self.moves[0]]
                 else:
-                    self.moves = self.moves[::self.speed]
+                    self.moves = self.moves[::self._speed]
 
                 ny, nx = self.moves.pop()
 
                 if (isinstance(map.grid[ny][nx], (self.target, None))):
                     self.y, self.x = ny, nx
-                    if isinstance(map.grid[self.y][self.x], self.target):
-                        eat_action.run(self, self.target)
+                    if isinstance(map._grid[self.y][self.x], self._target):
+                        self.eat(target)
                 else:
                     self.moves = []
 
+
     def update_state(self):
         if self._hp <= 0:
-            self._to_remove()
+            self.remove_entity()
         if self._move_counter % 2 == 0:
             self.take_hunger()
-        if self.hungry == 0 or self.hungry < 0:
-            self._to_remove()
+        if self._hungry == 0 or self._hungry < 0:
+            self.remove_entity()
 
     def eat(self, target):
-        if (100 - obj.hungry) <= 50:
-            self.hungry += (100 - self.hungry)
+        if (100 - self._hungry) <= 50:
+            self._hungry += (100 - self._hungry)
         else:
-            self.hungry += 50
+            self._hungry += 50
 
         target.remove_entity()
 
     def take_damage(self, count):
         self._hp -= count
 
-    def take_hunger(self, move_counter):
-        self._hunger -= 5
+    def take_hunger(self):
+        self._hungry -= 5

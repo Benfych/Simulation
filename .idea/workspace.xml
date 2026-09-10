@@ -6,7 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="6defda77-6940-4a68-9cf9-3afa5f2cb81d" name="Changes" comment="Revert &quot;фиксы&quot;&#10;&#10;This reverts commit e7f1fc79">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/map/game_map.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/map/game_map.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Render/CLI_render.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Render/CLI_render.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/creature.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/creature.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/herbivore.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/herbivore.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/objects.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/predator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/predator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pathfinding/pathfinder_BFS.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/pathfinding/pathfinder_BFS.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +65,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "SearchEverywhere.PersistedScope.FileSearchEverywhereContributor": "All Places",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "refactoring",
+    "git-widget-placeholder": "#1 on refactoring",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "/home/deck/PycharmProjects/Simulation",
     "node.js.detected.package.eslint": "true",
@@ -207,7 +212,8 @@
       <workItem from="1788700642595" duration="22743000" />
       <workItem from="1788807048114" duration="3989000" />
       <workItem from="1788938133257" duration="1161000" />
-      <workItem from="1788939713169" duration="15010000" />
+      <workItem from="1788939713169" duration="15289000" />
+      <workItem from="1789023538852" duration="8814000" />
     </task>
     <servers />
   </component>
