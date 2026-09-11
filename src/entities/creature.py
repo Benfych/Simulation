@@ -1,5 +1,4 @@
 from random import randint
-
 from .entity import Entity
 
 
@@ -21,8 +20,8 @@ class Creature(Entity):
         self._move_counter = 0
 
     def make_move(self, pathfinding):
-        self.update_state()
         self._move_counter += 1
+        self.update_state()
 
         if self._hungry < 100:
 
@@ -44,7 +43,6 @@ class Creature(Entity):
                         self.eat(target)
                 else:
                     self.moves = []
-
 
     def update_state(self):
         if self._hp <= 0:

@@ -40,4 +40,6 @@ class GameMap:
         if self._grid[x][y] is None:
             return True
 
+    def is_valid(self):
+
 

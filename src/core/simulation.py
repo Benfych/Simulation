@@ -1,57 +1,10 @@
-# Логика
-# ----------------------------------------
+from game_map import GameMap
 
-from game_map import Map
-from patchfinding.pathfinder_BFS import BFS
-import time
-import os
-
-# -----------------------------------------
-
-# Объекты
-# ----------------------------------------
-
-from Entities.apple import Apple
-from Entities.herbivore import Herbivore
-from Entities.predator import Predator
-from Entities.rock import Rock
-from Entities.tree import Tree
-
-# -----------------------------------------
-
-# Конфиги
-# ----------------------------------------
-
-from cfg.config import MAP_DEFAULT_CONFIG
-from cfg.config import HERBIVORE_DEFAULT_CONFIG
-from cfg.config import PREDATOR_DEFAULT_CONFIG
-from cfg.config import APPLE_DEFAULT_CONFIG
-from cfg.config import TREE_DEFAULT_CONFIG
-from cfg.config import ROCK_DEFAULT_CONFIG
-
-# -----------------------------------------
-
-# Действия
-# ----------------------------------------
-
-from actions.init_world_action import Init_world
-from actions.next_move_action import Next_move
-from actions.map_update_action import Map_update
-from actions.render_action import Render
-from actions.spawn_action import Spawner
-from actions.population_control_action import Population_control
-
-
-# -----------------------------------------
 
 class Simulation:
 
     def __init__(self):
-        self.map = Map(
-            MAP_DEFAULT_CONFIG.height,
-            MAP_DEFAULT_CONFIG.width,
-            MAP_DEFAULT_CONFIG.pathfinder
-        )
+        self.map = Map()
 
         self.spawner = Spawner(self.map)
 
