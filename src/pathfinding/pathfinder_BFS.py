@@ -12,9 +12,9 @@ class BFS:
         self.queue = deque()
         self.directions = [(1, 0), (0, 1), (-1, 0), (0, -1)]
         self.rows = len(self.map.grid[0])
-        self.col = len(self.map.grid)
+        self.cols = len(self.map.grid)
 
-    def get_moves(self, start_y: int, start_x: int, target) -> list:
+    def get_moves(self, start_y, start_x, target):
         self.queue = deque([(start_y, start_x)])
         self.visited = {(start_y, start_x)}
         self.parents = {}
@@ -30,13 +30,13 @@ class BFS:
                     path.append(current)
                     current = self.parents[current]
 
-                # path.reverse()
                 return path
 
             for dy, dx in self.directions:
                 ny, nx = y + dy, x + dx
                 if 0 <= nx < self.rows and 0 <= ny < self.col and (ny, nx) not in self.visited:
-                    if not isinstance(self.map.grid[ny][nx], Rock) and not isinstance(self.map.grid[ny][nx], Tree):
+                    # if not isinstance(self.map.grid[ny][nx], Rock) and not isinstance(self.map.grid[ny][nx], Tree):
+                    if game_map.is_free(nx, ny):
                         self.visited.add((ny, nx))
                         self.parents[(ny, nx)] = (y, x)
                         self.queue.append((ny, nx))
