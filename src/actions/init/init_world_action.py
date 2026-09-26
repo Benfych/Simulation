@@ -1,19 +1,18 @@
-from actions.action import Action
-from dataclasses import dataclass
-from actions.spawn_action import Spawner
+from ...conf import OBJECT_COUNT_CONF
+from ...service import SpawnerService
+from ..action import Action
 
-class Init_world(Action):
+class InitWorldAction(Action):
+    def __init__(self, game_map):
+        self._game_map = game_map
+        self._object_count_conf = OBJECT_COUNT_CONF
+        self._start = 0
 
-    def __init__(self, map, simulation, spawner):
-        self.map = map
-        self.simulation = simulation
-        self.spawner = spawner
-
-    def run(self):
-        for config in self.simulation.spawn_config:
-            for _ in range(config.count):
-                self.spawner.run(config)                
-
+    def execute(self):
+        self._start += 1
+        for obj in self._object_count_conf:
+            for obj_count in range(self._object_count_conf[obj]):
+                SpawnerService.spawn(self._game_map, obj)
 
 
     
