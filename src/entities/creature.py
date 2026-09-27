@@ -65,7 +65,7 @@ class Creature(ABC, Entity):
         if self._creature_move_counter % 2 == 0:
             self.take_hunger(10)
         if self._hungry == 0 or self._hungry < 0:
-            self.take_damage(10)
+            self.take_damage(5)
 
     def eat(self, obj):
         count = obj.on_eat()
