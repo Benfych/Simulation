@@ -27,7 +27,7 @@ class Simulation:
         if self._world_init != 1:
             self._init_actions[0].execute()
             self._world_init = 1
-        self._sim_move_counter += 1
+        self._sim_move_counter += 1l
         self._render.render(self._sim_move_counter)
         for action in self._tick_actions:
             action.execute()
