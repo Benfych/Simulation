@@ -16,7 +16,6 @@ class Predator(Creature):
          _target (list[str]): имена классов, на которые охотится хищник
      """
 
-
     def __init__(self, y, x, conf):
         self._hp = conf["hp"]
         self._speed = conf["speed"]
@@ -29,4 +28,3 @@ class Predator(Creature):
             obj.take_damage(self._attack)
             if obj.get_hp() <= 0:
                 self.eat(obj)
-

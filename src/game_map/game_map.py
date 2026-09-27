@@ -58,7 +58,7 @@ class GameMap:
         Функция для сравнения объекта с клеткой на карте
 
         """
-        if  (0 <= x < self._width and 0 <= y < self._height):
+        if (0 <= x < self._width and 0 <= y < self._height):
             if isinstance(self._grid[y][x], obj):
                 return True
             else:

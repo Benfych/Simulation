@@ -18,5 +18,3 @@ class SpawnerService():
                 new_obj = EntityFactory.create_entity(entity_type, ny, nx)
                 game_map.add_object(new_obj)
                 break
-
-

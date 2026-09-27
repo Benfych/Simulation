@@ -19,7 +19,6 @@ class Simulation:
                               EntityRemoverAction(self._game_map, self._pathfinder),
                               EntitiesRespawnAction(self._game_map)]
 
-
     def clear_CLI(self):
         os.system("cls" if os.name == "nt" else "clear")
 
@@ -32,7 +31,6 @@ class Simulation:
         self._render.render(self._sim_move_counter)
         for action in self._tick_actions:
             action.execute()
-
 
     def start_simulation(self):
         self._sim_move_counter += 1
@@ -53,13 +51,7 @@ class Simulation:
             if sleep_time > 0:
                 time.sleep(sleep_time)
 
-
     def pause_simulation(self):
 
         print("(1) Продолжить")
         print("(2) Выйти")
-
-
-
-
-

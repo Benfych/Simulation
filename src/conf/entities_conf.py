@@ -1,5 +1,6 @@
 from ..entities import Herbivore, Apple
 from ..pathfinding import pathfinder_BFS
+
 """
 Файл конфигурации объектов и их количество на карте.
 
@@ -17,7 +18,6 @@ OBJECT_POPULATION_CONF
 
 """
 
-
 # Конфигурация существ
 HERBIVORE_CONF = {
     "hp": 100,
@@ -34,7 +34,7 @@ PREDATOR_CONF = {
 }
 
 APPLE_CONF = {
-   "nutrition": 50
+    "nutrition": 50
 }
 
 CREATURE_PATHFINDER_CONF = {

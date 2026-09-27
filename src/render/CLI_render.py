@@ -11,7 +11,6 @@ class CLIRender:
         CREATURES_SPRITES (dict[str, str]): маппинг имени класса
     """
 
-
     def __init__(self, game_map):
         self._game_map = game_map
 

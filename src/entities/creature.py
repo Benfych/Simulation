@@ -49,8 +49,8 @@ class Creature(ABC, Entity):
                 else:
                     self.moves = []
 
-                #Каждый ход, существо проверяет клетки вокруг себя на наличие цели
-                #при нахождении, взаимодействует с ней
+                # Каждый ход, существо проверяет клетки вокруг себя на наличие цели
+                # при нахождении, взаимодействует с ней
                 directions = [(1, 0), (0, 1), (-1, 0), (0, -1)]
                 for dy, dx in directions:
                     if 0 <= self._y + dy < game_map.get_height() and 0 <= self._x + dx < game_map.get_width():
@@ -58,7 +58,7 @@ class Creature(ABC, Entity):
                         if any(cell.__class__.__name__ == t for t in self._target):
                             self.target_interaction(cell)
 
-    #Обновление статуса существа каждый ти
+    # Обновление статуса существа каждый ти
     def update_state(self):
         if self._hp <= 0:
             self.to_remove()
@@ -99,4 +99,3 @@ class Creature(ABC, Entity):
 
     def take_hunger(self, count):
         self._hungry -= count
-

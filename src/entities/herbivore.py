@@ -1,6 +1,7 @@
 from .creature import Creature
 from .edible import Edible
 
+
 class Herbivore(Creature, Edible):
     """
     Травоядное — существо, которое питается объектами-едой.
@@ -15,6 +16,7 @@ class Herbivore(Creature, Edible):
         _target (list[str]): имена классов, которые травоядное ест
         _nutrition (int): питательная ценность самого травоядного
     """
+
     def __init__(self, y, x, conf):
         self._hp = conf["hp"]
         self._speed = conf["speed"]

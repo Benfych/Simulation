@@ -6,4 +6,5 @@ from .apple import Apple
 from .rock import Rock
 from .tree import Tree
 from .edible import Edible
+
 __all__ = ["Entity", "Creature", "Herbivore", "Predator", "Apple", "Rock", "Tree"]

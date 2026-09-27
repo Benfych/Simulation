@@ -33,6 +33,3 @@ class PathfinderBFS:
                         self.visited.add((ny, nx))
                         self.parents[(ny, nx)] = (y, x)
                         self.queue.append((ny, nx))
-
-
-
