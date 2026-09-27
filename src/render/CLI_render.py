@@ -24,14 +24,14 @@ class CLIRender:
     }
 
     def render(self, move_counter):
-        print("---" * self._game_map.get_width())
+        print("-" * (3 * self._game_map.get_width() + 3))
         for y in range(self._game_map.get_height() - 1):
             print("| " + " ".join(". " if self._game_map.get_object(x, y) is None
                                   else self.CREATURES_SPRITES[self._game_map.get_object(x, y).__class__.__name__]
                                   for x in range(self._game_map.get_width())) + " |"
                   )
 
-        print("---" * self._game_map.get_width())
+        print("-" * (3 * self._game_map.get_width() + 3))
         print(
             f"{self.CREATURES_SPRITES['Herbivore']}: {self._game_map.get_objects_count('Herbivore')}  "
             f"{self.CREATURES_SPRITES['Predator']}: {self._game_map.get_objects_count('Predator')}  "

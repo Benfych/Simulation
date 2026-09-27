@@ -28,7 +28,7 @@ HERBIVORE_CONF = {
 
 PREDATOR_CONF = {
     "hp": 100,
-    "speed": 1,
+    "speed": 50,
     "attack": 50,
     "target": ["Herbivore"]
 }

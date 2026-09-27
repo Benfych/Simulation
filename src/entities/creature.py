@@ -63,9 +63,9 @@ class Creature(ABC, Entity):
         if self._hp <= 0:
             self.to_remove()
         if self._creature_move_counter % 2 == 0:
-            self.take_hunger(20)
-        # if self._hungry == 0 or self._hungry < 0:
-        #     self.take_damage(20)
+            self.take_hunger(10)
+        if self._hungry == 0 or self._hungry < 0:
+            self.take_damage(10)
 
     def eat(self, obj):
         count = obj.on_eat()
